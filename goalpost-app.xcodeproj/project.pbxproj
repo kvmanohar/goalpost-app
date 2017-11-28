@@ -17,6 +17,7 @@
 		CE08CB011FCCBF5500619E04 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08CB001FCCBF5500619E04 /* GoalType.swift */; };
 		CE08CB031FCCC61600619E04 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08CB021FCCC61600619E04 /* CreateGoalVC.swift */; };
 		CE08CB051FCCC7E700619E04 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08CB041FCCC7E700619E04 /* UIViewControllerExt.swift */; };
+		CEBCE44C1FCE01EB00D47C08 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCE44B1FCE01EB00D47C08 /* UIViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE08CB001FCCBF5500619E04 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		CE08CB021FCCC61600619E04 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		CE08CB041FCCC7E700619E04 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		CEBCE44B1FCE01EB00D47C08 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				CE08CB041FCCC7E700619E04 /* UIViewControllerExt.swift */,
+				CEBCE44B1FCE01EB00D47C08 /* UIViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				CE08CB031FCCC61600619E04 /* CreateGoalVC.swift in Sources */,
 				CE08CB011FCCBF5500619E04 /* GoalType.swift in Sources */,
 				CE08CAE81FCB6E7800619E04 /* GoalsVC.swift in Sources */,
+				CEBCE44C1FCE01EB00D47C08 /* UIViewExt.swift in Sources */,
 				CE08CAE61FCB6E7800619E04 /* AppDelegate.swift in Sources */,
 				CE08CB051FCCC7E700619E04 /* UIViewControllerExt.swift in Sources */,
 				CE08CAEE1FCB6E7800619E04 /* goalpost_app.xcdatamodeld in Sources */,
