@@ -366,6 +366,9 @@
                                             <constraint firstAttribute="width" secondItem="li3-dm-lrW" secondAttribute="height" multiplier="1:1" id="v3t-PZ-v0m"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="fQ1-bx-O0E" eventType="touchUpInside" id="V7n-Wl-cwB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -407,6 +410,9 @@
                                         <state key="normal" title="CREATE GOAL">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createGoalBtnPressed:" destination="fQ1-bx-O0E" eventType="touchUpInside" id="WyF-LU-mej"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -433,7 +439,7 @@
                         <viewLayoutGuide key="safeArea" id="ycp-qY-kRy"/>
                     </view>
                     <connections>
-                        <outlet property="createGoalBtn" destination="Djl-Mf-ydf" id="cYW-Qa-lh7"/>
+                        <outlet property="createGoalBtn" destination="Djl-Mf-ydf" id="bG1-x4-XV4"/>
                         <outlet property="pointsTextField" destination="2cI-L6-6HU" id="jyu-Lw-cT9"/>
                     </connections>
                 </viewController>
