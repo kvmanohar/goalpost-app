@@ -30,8 +30,6 @@ class GoalsVC: UIViewController {
         }
         presentDetail(createGoalVC)
         
-        
-        
     }//EndOf addGoalBtnPressed
 
 }
