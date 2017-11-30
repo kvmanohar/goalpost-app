@@ -14,6 +14,7 @@ let appDelegate = UIApplication.shared.delegate as? AppDelegate
 class GoalsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var undoView: UIView!
     
     var goals: [Goal] = []
     
@@ -22,6 +23,7 @@ class GoalsVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = false
+        undoView.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,8 +53,21 @@ class GoalsVC: UIViewController {
         }
         presentDetail(createGoalVC)
     }//EndOf addGoalBtnPressed
+    
+    
+    @IBAction func undoDeleteBtnPressed(_ sender: Any) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        managedContext.rollback()
+        fetchCoreDataObjects()
+        tableView.reloadData()
+        
+        UIView.animate(withDuration: 0.10) {
+            self.undoView.isHidden = true
+        }
+        
+    }//EndOf-undoDeleteBtnPressed
+    
 }
-
 
 
 //MARK: Extensions - UITableView
@@ -89,6 +104,8 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
             self.removeGoal(atIndexPath: indexPath)
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            self.undoView.isHidden = false
         }
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         
@@ -125,23 +142,20 @@ extension GoalsVC {
     
     func removeGoal(atIndexPath indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-        
         managedContext.delete(goals[indexPath.row])
-        do {
-            try managedContext.save()
-            print("Successfully removed goal!")
-        } catch {
-            debugPrint("Could not remove item : \(error.localizedDescription)")
-        }
+//        do {
+//            try managedContext.save()
+//            print("Successfully removed goal!")
+//        } catch {
+//            debugPrint("Could not remove item : \(error.localizedDescription)")
+//        }
         
     }//EndOf-removeGoal
-    
     
     func fetch(completion: (_ complete: Bool)->()){
         guard  let managedContext = appDelegate?.persistentContainer.viewContext else {  return }
         
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
-        
         do {
             goals = try managedContext.fetch(fetchRequest)
             completion(true)

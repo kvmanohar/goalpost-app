@@ -43,7 +43,7 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
             completion(true)
             
         } catch {
-            debugPrint("Could not save: \(error.localizedDescription)" )
+            debugPrint("Could not save - Add Goal : \(error.localizedDescription)" )
             completion(false)
         }
         

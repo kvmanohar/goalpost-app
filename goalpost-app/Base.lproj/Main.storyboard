@@ -205,16 +205,53 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COr-l2-fhT">
+                                <rect key="frame" x="0.0" y="617" width="374.5" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Successfully Deleted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTN-md-CyN">
+                                        <rect key="frame" x="8" y="11.5" width="237" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UM-Cp-RSm">
+                                        <rect key="frame" x="316" y="9" width="50" height="32"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="fTb-tn-YoU"/>
+                                            <constraint firstAttribute="height" constant="32" id="fbc-R0-GYQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="UNDO">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoDeleteBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sz1-sc-0Nf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aTN-md-CyN" firstAttribute="leading" secondItem="COr-l2-fhT" secondAttribute="leading" constant="8" id="2Py-K0-sql"/>
+                                    <constraint firstAttribute="height" constant="50" id="SqF-6j-vhL"/>
+                                    <constraint firstItem="5UM-Cp-RSm" firstAttribute="centerY" secondItem="COr-l2-fhT" secondAttribute="centerY" id="Vro-5I-hUJ"/>
+                                    <constraint firstItem="aTN-md-CyN" firstAttribute="centerY" secondItem="COr-l2-fhT" secondAttribute="centerY" id="tlj-Mk-XRn"/>
+                                    <constraint firstAttribute="trailing" secondItem="5UM-Cp-RSm" secondAttribute="trailing" constant="8" id="vUH-QK-2X5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qfi-dS-PcE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4hX-6s-xEj"/>
+                            <constraint firstItem="COr-l2-fhT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7i5-Gh-MWY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="COr-l2-fhT" secondAttribute="trailing" id="C9g-R8-OFy"/>
                             <constraint firstItem="M0Z-mX-ZJz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="L9V-2B-E2F"/>
                             <constraint firstItem="Qfi-dS-PcE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LxG-NW-JIy"/>
                             <constraint firstItem="QGH-Vm-baZ" firstAttribute="top" secondItem="Qfi-dS-PcE" secondAttribute="bottom" constant="75" id="aQF-V6-2N1"/>
                             <constraint firstItem="M0Z-mX-ZJz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bRI-eA-D98"/>
                             <constraint firstItem="M0Z-mX-ZJz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jhg-2Y-AxT"/>
                             <constraint firstItem="M0Z-mX-ZJz" firstAttribute="top" secondItem="Qfi-dS-PcE" secondAttribute="bottom" id="olZ-5i-NzL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="COr-l2-fhT" secondAttribute="bottom" id="pCy-bH-9wa"/>
                             <constraint firstItem="Qfi-dS-PcE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pFW-gg-IKY"/>
                             <constraint firstItem="QGH-Vm-baZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pJC-Oj-3gQ"/>
                         </constraints>
@@ -222,6 +259,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="M0Z-mX-ZJz" id="51C-Kb-1l9"/>
+                        <outlet property="undoView" destination="COr-l2-fhT" id="2cW-VT-PMi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
